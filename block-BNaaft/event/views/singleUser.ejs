@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Title: <%= event.title%></p>
+    <p>Summary: <%= event.summary%></p>
+    <p>Host: <%= event.host%></p>
+    <p>Start: <%= event.start_date%></p>
+    <p>End: <%= event.end_date%></p>
+    <p>Event Category: <%= event.event_category%></p>
+    <p>Location: <%= event.location%></p>
+    <p>Likes: <%= event.likes%></p>
+    <a href="/event/<%= event.id%>/edit">
+      <button>Update info</button>
+    </a>
+    <a href="/event/<%= event.id%>/delete">
+      <button>Delete info</button>
+    </a>
+    <a href="/event/">
+      <button>Back to the list</button>
+    </a>
+    <a href="/">
+      <button>Home</button>
+    </a>
+    <a href="/event/<%= event.id%>/likes">
+      <button>increase</button>
+    </a>
+    <a href="/event/<%= event.id%>/dislikes">
+      <button>decrease</button>
+    </a>
+
+    <form action="/event/<%= event.id%>/remarks" method="POST">
+      <fieldset>
+        <input name="author" type="text" placeholder="author" />
+        <textarea name="content"></textarea>
+        <input type="submit" value="add" />
+      </fieldset>
+    </form>
+    <%event.remarks.forEach(remark=>{%>
+    <p><%= remark.author%></p>
+    <h4><%= remark.content%></h4>
+    <a href="/remark/<%= remark.id%>/edit">
+      <button>edit</button>
+    </a>
+    <a href="/remark/<%= remark.id%>/delete">
+      <button>delete</button>
+    </a>
+    <%})%>
+    <script src="../javascripts/like.js"></script>
+  </body>
+</html>

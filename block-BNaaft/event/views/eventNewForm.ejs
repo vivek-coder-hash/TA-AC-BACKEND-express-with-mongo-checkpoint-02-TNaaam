@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Form</title>
+  </head>
+  <body>
+    <form method="POST" action="/event/<%= event.id%>">
+      <fieldset>
+        <input
+          name="title"
+          placeholder="title"
+          type="text"
+          value="<%=
+        event.title%>"
+        />
+        <input
+          name="summary"
+          placeholder="summary"
+          type="text"
+          value="<%=
+        event.summary%>"
+        />
+        <input
+          name="host"
+          placeholder="host"
+          type="text"
+          value="<%=
+        event.host%>"
+        />
+        <input
+          name="start_date"
+          placeholder="start_date"
+          type="date"
+          value="<%=
+        event.start_date%>"
+        />
+        <input
+          name="end_date"
+          placeholder="end_date"
+          type="date"
+          value="<%=
+        event.end_date%>"
+        />
+        <input
+          name="event_category"
+          placeholder="event_category"
+          type="text"
+          value="<%=
+        event.event_category%>"
+        />
+        <input
+          name="location"
+          placeholder="location"
+          type="text"
+          value="<%=
+        event.location%>"
+        />
+        <input
+          name="likes"
+          placeholder="likes"
+          type="Number"
+          value="<%=
+        event.likes%>"
+        />
+        <input type="submit" value="Add Event" />
+      </fieldset>
+    </form>
+  </body>
+</html>
